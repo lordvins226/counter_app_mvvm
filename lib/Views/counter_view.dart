@@ -11,7 +11,7 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterViewModel =
-        Provider.of<CounterViewModel>(context, listen: false);
+        Provider.of<CounterViewModel>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -23,15 +23,10 @@ class CounterPage extends StatelessWidget {
             Text(
               'You have pushed the button this many times:',
             ),
-            Consumer<CounterViewModel>(
-              builder: (context, model, child) {
-                final count = model.counter;
-                return Text(
-                  '$count',
-                  style: Theme.of(context).textTheme.display1,
-                );
-              },
-            )
+            Text(
+              '${counterViewModel.counter}',
+              style: Theme.of(context).textTheme.display1,
+            ),
           ],
         ),
       ),

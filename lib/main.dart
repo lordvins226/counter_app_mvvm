@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'counter_mvvm_app',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.indigo,
       ),
       home: ChangeNotifierProvider<CounterViewModel>(
         create: (context) => CounterViewModel(),
